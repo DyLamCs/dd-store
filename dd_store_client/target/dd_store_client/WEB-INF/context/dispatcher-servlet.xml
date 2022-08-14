@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Chỉ định controller -->
+	<context:component-scan base-package="com.web.controller" />
+
+	<!-- Được sử dụng để kích hoạt các thành phần spring MVC với cấu hình mặc 
+		định của nó. (Chỉ dùng trong spring MVC) -->
+	<mvc:annotation-driven />
+
+	<!-- InternalResourceViewResolver sẻ map tên view mà chúng ta
+	 trả về trong controller với một tên file nằm trong thư mục được chỉ định -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		
+		<property name="prefix" value="/WEB-INF/views/account" />
+		
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<mvc:resources mapping="/templates/**" location="/templates/"></mvc:resources> 
+	
+	
+	
+</beans>

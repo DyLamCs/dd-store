@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.table td {
+	vertical-align: middle;
+}
+
+/*  Mobile width < 740 px */
+@media only screen and (max-width: 739px) {
+	.card {
+		width: 100%;
+		border: 0px solid;
+	}
+	.btn-add {
+		text-align: center;
+	}
+	.btn-action {
+		width: 80px;
+		margin-top: 3px;
+	}
+}
+
+/* Table: width >= 740px and width < 1024px */
+@media only screen and (min-width: 740px) and (max-width: 1023) {
+	.card {
+		width: 100%;
+	}
+	.btn-action {
+		width: 100px;
+		margin-top: 5px;
+	}
+	.margin-table {
+		max-width: 100%;
+		flex: auto;
+		margin: auto;
+	}
+}
+
+/* PC: width >= 1024px */
+@media only screen and (min-width: 1024px) {
+}
+
+.table-responsive {
+	height: 400px;
+	overflow: scroll;
+}
